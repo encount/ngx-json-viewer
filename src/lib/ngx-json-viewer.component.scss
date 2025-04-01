@@ -3,11 +3,9 @@ $type-colors: (
   number: var(--ngx-json-number, #009688),
   boolean: var(--ngx-json-boolean, #B938A4),
   date: var(--ngx-json-date, #05668D),
-
   array: var(--ngx-json-array, #999),
   object: var(--ngx-json-object, #999),
   function: var(--ngx-json-function, #999),
-
   'null': var(--ngx-json-null, #fff),
   undefined: var(--ngx-json-undefined, #fff)
 );
@@ -71,14 +69,17 @@ $type-colors: (
   .segment-type-null > .segment-main > .segment-value {
     background-color: var(--ngx-json-null-bg, red);
   }
+
   .segment-type-undefined > .segment-main {
     & > .segment-key {
       color: var(--ngx-json-undefined-key, #999);
     }
+
     & > .segment-value {
       background-color: var(--ngx-json-undefined-key, #999);
     }
   }
+
   .segment-type-object > .segment-main,
   .segment-type-array > .segment-main {
     white-space: nowrap;
