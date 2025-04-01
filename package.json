@@ -16,6 +16,9 @@
     "url": "https://github.com/hivivo/ngx-json-viewer/issues"
   },
   "homepage": "https://github.com/hivivo/ngx-json-viewer#readme",
+  "scripts": {
+    "build": "ng build"
+  },
   "peerDependencies": {
     "@angular/common": "^19.1.0",
     "@angular/core": "^19.1.0"
