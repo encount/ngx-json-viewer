@@ -1,5 +1,4 @@
 import {Component, Input, OnChanges, SimpleChanges} from '@angular/core';
-import {NgClass, NgForOf, NgIf} from '@angular/common';
 
 export interface Segment {
   key: string;
@@ -11,14 +10,8 @@ export interface Segment {
 
 @Component({
   selector: 'ngx-json-viewer',
-  imports: [
-    NgForOf,
-    NgIf,
-    NgClass
-  ],
   templateUrl: 'ngx-json-viewer.component.html',
-  styleUrls: ['ngx-json-viewer.component.scss'],
-  standalone: true
+  styleUrls: ['ngx-json-viewer.component.scss']
 })
 export class NgxJsonViewerComponent implements OnChanges {
 

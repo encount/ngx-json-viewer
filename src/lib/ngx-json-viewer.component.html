@@ -1,21 +1,25 @@
 <section class="ngx-json-viewer">
-  <section
-    *ngFor="let segment of segments"
-    [ngClass]="['segment', 'segment-type-' + segment.type]">
-    <section
-      (click)="toggle(segment)"
-      [ngClass]="{
-        'segment-main': true,
-        'expandable': isExpandable(segment),
-        'expanded': segment.expanded
-      }">
-      <div *ngIf="isExpandable(segment)" class="toggler"></div>
-      <span class="segment-key">{{ segment.key }}</span>
-      <span class="segment-separator">: </span>
-      <span *ngIf="!segment.expanded || !isExpandable(segment)" class="segment-value">{{ segment.description }}</span>
+  @for (segment of segments; track segment.key) {
+    <section [class]="'segment segment-type-' + segment.type">
+      <section
+        (click)="toggle(segment)"
+        class="segment-main"
+        [class.expandable]="isExpandable(segment)"
+        [class.expanded]="segment.expanded">
+        @if (isExpandable(segment)) {
+          <div class="toggler"></div>
+        }
+        <span class="segment-key">{{ segment.key }}</span>
+        <span class="segment-separator">: </span>
+        @if (!segment.expanded || !isExpandable(segment)) {
+          <span class="segment-value">{{ segment.description }}</span>
+        }
+      </section>
+      @if (segment.expanded && isExpandable(segment)) {
+        <section class="children">
+          <ngx-json-viewer [json]="segment.value" [expanded]="expanded" [depth]="depth" [_currentDepth]="_currentDepth+1"></ngx-json-viewer>
+        </section>
+      }
     </section>
-    <section *ngIf="segment.expanded && isExpandable(segment)" class="children">
-      <ngx-json-viewer [json]="segment.value" [expanded]="expanded" [depth]="depth" [_currentDepth]="_currentDepth+1"></ngx-json-viewer>
-    </section>
-  </section>
+  }
 </section>
