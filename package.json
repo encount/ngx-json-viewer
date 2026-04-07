@@ -8,7 +8,10 @@
   ],
   "author": "Martin Thorsen Ranang <martin@encount.co>",
   "license": "MIT",
-  "repository": "https://github.com/encount/ngx-json-viewer.git",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/encount/ngx-json-viewer.git"
+  },
   "bugs": {
     "url": "https://github.com/encount/ngx-json-viewer/issues"
   },
