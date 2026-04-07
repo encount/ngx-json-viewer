@@ -1,7 +1,9 @@
 import { Component } from '@angular/core';
+import { NgxJsonViewerComponent } from 'ngx-json-viewer';
 
 @Component({
   selector: 'app-root',
+  imports: [NgxJsonViewerComponent],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
